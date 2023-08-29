@@ -4,6 +4,7 @@ class BruteForceSolution
     public short[] Next { get; private set; }
     public BruteForceSolution(short[] array)
     {
+        //This naive solution wont give good performance for long test cases.
         //First we iterate for every single permutation
         //and we keep the ones that are lexicographically greater.
         this.Candidates = new List<short[]>();

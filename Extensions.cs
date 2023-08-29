@@ -1,12 +1,20 @@
 static class Extensions
 {
+    public static void Show(this short[] array)
+    {
+        foreach (var item in array)
+        {
+            System.Console.Write(item+" ");
+        }
+        System.Console.WriteLine();
+    }
     public static short LexCompare(this short[] array, short[] input)
     {
         for (short i = 0; i < array.Length; i++)
         { 
             if(array[i]<input[i])
             {
-                return i;
+                return (short)(i+1);
             }else 
             if(array[i]>input[i])
             {
