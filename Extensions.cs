@@ -1,5 +1,20 @@
 static class Extensions
 {
+    public static short LexCompare(this short[] array, short[] input)
+    {
+        for (short i = 0; i < array.Length; i++)
+        { 
+            if(array[i]<input[i])
+            {
+                return i;
+            }else 
+            if(array[i]>input[i])
+            {
+                return -1;
+            }
+        }
+        return 0;
+    }
     public static IEnumerable<short[]> Permutations(this short[] array)
     {
         foreach (var item in permutations(new short[array.Length], 0, new bool[array.Length]))
