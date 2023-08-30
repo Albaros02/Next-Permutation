@@ -1,15 +1,6 @@
 namespace NextPermutationService.Extensions;
 static class Extensions
 {
-    public static string ToStringWithComas(this IEnumerable<short> list)
-    {
-        string result = "";
-        foreach (var item in list)
-        {
-            result+=item + ", ";
-        }
-        return result.Substring(0,result.Length-2);
-    }
     public static void Show(this short[] array)
     {
         foreach (var item in array)

@@ -1,12 +1,8 @@
 namespace NextPermutationService.App;
 using NextPermutationService.Extensions;
-using NextPermutationService.Common.Interfaces;
-using System.Collections.Generic;
-
-class BruteForceSolution : IPermutationEnumerable<short>
+class BruteForceSolution
 {
     private List<short[]> Candidates;
-    IEnumerable<short> IPermutationEnumerable<short>.Next(IEnumerable<short> current) => this.Next;
     public short[] Next { get; private set; }
     public BruteForceSolution(short[] array)
     {
@@ -40,5 +36,4 @@ class BruteForceSolution : IPermutationEnumerable<short>
         }
         return result;
     }
-
 }

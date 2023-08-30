@@ -1,9 +1,6 @@
 namespace NextPermutationService.Validation;
 class PermutationInputValidation
 {
-    // We could use Fluent for validations but I think
-    // that it would be too much for the simple verifications
-    // that we should do.
     public bool IsValid => (this.errors.Count == 0);
     public List<string> errors { get; set; }
     public List<short> CleanedInput { get; set; }

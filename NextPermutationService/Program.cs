@@ -15,7 +15,7 @@ internal class Program
 
     
         //Injection of the Solution we gonna use. 
-        builder.Services.AddSingleton<IPermutationEnumerable<short>,PermutationSolution>();
+        builder.Services.AddSingleton<IPermutationEnumerable<short>,Solution>();
 
 
         var app = builder.Build();
