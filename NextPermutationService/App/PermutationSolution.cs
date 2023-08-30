@@ -1,6 +1,6 @@
 using NextPermutationService.Common.Interfaces;
 namespace NextPermutationService.App;
-class Solution : IPermutationEnumerable<short>
+class PermutationSolution : IPermutationEnumerable<short>
 {
     public short[] current { get; set;}
     public IEnumerable<short> Next(IEnumerable<short> input)
@@ -8,7 +8,7 @@ class Solution : IPermutationEnumerable<short>
         this.current = getNext(input.ToArray());
         return current;
     } 
-    public Solution()
+    public PermutationSolution()
     {
         current = new short[0];
     }
