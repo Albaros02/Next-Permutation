@@ -53,6 +53,8 @@ With this algorithm, we have solved the problem, but unlike the first solution, 
 
 >As we finished the solution for our program, we moved from the console implementation to an API that provides the service of executing the program.
 
+>To use the api properly you should provide a string of numbers separated by comas or whitespace, the validator is gonna accept any input with comas and withspace even if it does not have the correct order, for example : 1 ,2 3 4 ,5,7. 
+
 To deploy Swagger and see the endpoints and other details, navigate to the project path and run the following command:
 ```
     dotnet watch
