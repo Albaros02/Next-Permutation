@@ -1,16 +1,19 @@
 using NextPermutationService.App;
+using NextPermutationService.Common.Interfaces;
 namespace NextPermutationService.Tester;
 class MyTester
 {
     public List<short[]> errors = new List<short[]>();
-    public MyTester(int maxLength, int caseCount, int? seed)
+    private readonly IPermutationEnumerable<short> solution;
+    public MyTester(IPermutationEnumerable<short> Solution,int maxLength, int caseCount, int? seed)
     {
         // This tester is using a brute force approach to 
         // check the correctness of the given solution but 
         // is not gonna handle arrays with a length larger 
         // than 15, as we know the backtrack of building the 
-        // permutations grows exponentially.  
+        // permutations grows at a factorial rate.  
         
+        solution = Solution;
         Random rand = new Random();
         
         for (int i = 0; i < caseCount; i++)
@@ -37,7 +40,6 @@ class MyTester
     private bool Test(short[] array)
     {
         BruteForceSolution brute = new BruteForceSolution(array);
-        Solution solution = new Solution();
         return CompareArrays(array,brute.Next , solution.Next(array).ToArray());
     }
 
