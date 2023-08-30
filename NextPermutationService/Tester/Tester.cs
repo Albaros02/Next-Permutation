@@ -1,7 +1,9 @@
-class Tester
+using NextPermutationService.App;
+namespace NextPermutationService.Tester;
+class MyTester
 {
     public List<short[]> errors = new List<short[]>();
-    public Tester(int maxLength, int caseCount, int? seed)
+    public MyTester(int maxLength, int caseCount, int? seed)
     {
         // This tester is using a brute force approach to 
         // check the correctness of the given solution but 
@@ -35,8 +37,8 @@ class Tester
     private bool Test(short[] array)
     {
         BruteForceSolution brute = new BruteForceSolution(array);
-        Solution solution = new Solution(array);
-        return CompareArrays(array,brute.Next , solution.Next);
+        Solution solution = new Solution();
+        return CompareArrays(array,brute.Next , solution.Next(array).ToArray());
     }
 
     private bool CompareArrays(short[] array, short[] array1 ,short[] array2)
@@ -45,9 +47,6 @@ class Tester
         {
             if(array1[i] != array2[i])
             {
-                array.Show();
-                array1.Show();
-                array2.Show();
                 return false;
             }
         }

@@ -1,11 +1,17 @@
-class Solution
+using NextPermutationService.Common.Interfaces;
+namespace NextPermutationService.App;
+class Solution : IPermutationEnumerable<short>
 {
-    public short[] Next { get; private set; }
-    public Solution(short[] array)
+    public short[] current { get; set;}
+    public IEnumerable<short> Next(IEnumerable<short> input)
     {
-        Next = getNext(array);
+        this.current = getNext(input.ToArray());
+        return current;
+    } 
+    public Solution()
+    {
+        current = new short[0];
     }
-
     private short[] getNext(short[] array)
     {
         for (int i = array.Length - 2; i >= 0 ; i--)
@@ -41,20 +47,21 @@ class Solution
 
     private void LowCostOrder(ref short[] array , int startPosition)
     {
-        short[] Sol = new short[110]; 
+        short[] sortedArrayStructure = new short[110]; 
         for (int i = startPosition; i < array.Length; i++)
         {
-            Sol[array[i]]++;
+            sortedArrayStructure[array[i]]++;
         }
-        int k = startPosition;
+        int position = startPosition;
         for (short i = 0; i < 110; i++)
         {
-            while(Sol[i] > 0)
+            while(sortedArrayStructure[i] > 0)
             {
-                array[k] = i;
-                Sol[i]--;
-                k++;
+                array[position] = i;
+                sortedArrayStructure[i]--;
+                position++;
             }
         }
     }
+
 }

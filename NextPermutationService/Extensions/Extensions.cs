@@ -1,3 +1,4 @@
+namespace NextPermutationService.Extensions;
 static class Extensions
 {
     public static void Show(this short[] array)

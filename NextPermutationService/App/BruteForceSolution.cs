@@ -1,3 +1,5 @@
+namespace NextPermutationService.App;
+using NextPermutationService.Extensions;
 class BruteForceSolution
 {
     private List<short[]> Candidates;
