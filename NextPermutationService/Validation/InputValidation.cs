@@ -12,11 +12,8 @@ class PermutationInputValidation
         errors = new List<string>();
         CleanedInput = new List<short>();
         var temp = cleanInput(input);
-        foreach (var item in temp)
-        {
-            isAllowedNumber(item);
-        }
-        if(this.IsValid)
+        Check(temp);
+        if (this.IsValid)
         {
             foreach (var number in temp)
             {
@@ -24,6 +21,17 @@ class PermutationInputValidation
             }
         }
     }
+
+    private void Check(string[] temp)
+    {
+        if (temp.Length > 100)
+            errors.Add("The length of the input is greater than the bounds.");
+        foreach (var item in temp)
+        {
+            isAllowedNumber(item);
+        }
+    }
+
     private string[] cleanInput(string input)
     {
         return input.Split(", ".ToCharArray(),StringSplitOptions.RemoveEmptyEntries);    
