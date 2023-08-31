@@ -5,7 +5,7 @@ using NextPermutationService.Extensions;
 namespace NextPermutationService.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class PermutationsController : ControllerBase
 {
     private readonly IPermutationEnumerable<short> solution;
