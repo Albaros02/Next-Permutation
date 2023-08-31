@@ -60,6 +60,6 @@ To deploy Swagger and see the endpoints and other details, navigate to the proje
     dotnet watch
 ```
 
-Regarding input validation, we did not use the Fluent package for validation, nor did we use patterns like Mediator due to the limited operations our API performs.
+Regarding input validation, we did not use the Fluent package for validation or patterns like Mediator due to the limited operations our API performs.
 
 DependencyInjection was used to pass our solution implementation to the controller and decouple the implementations as much as possible.
