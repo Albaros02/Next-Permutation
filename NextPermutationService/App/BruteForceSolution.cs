@@ -3,7 +3,7 @@ using NextPermutationService.Extensions;
 using NextPermutationService.Common.Interfaces;
 using System.Collections.Generic;
 
-class BruteForceSolution : IPermutationEnumerable<short>
+public class BruteForceSolution : IPermutationEnumerable<short>
 {
     private List<short[]> Candidates;
     IEnumerable<short> IPermutationEnumerable<short>.Next(IEnumerable<short> current) => this.Next;
