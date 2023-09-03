@@ -26,16 +26,26 @@ class MyTester
             }
             if(Test(testArray))
             {
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                System.Console.WriteLine("Ok");
+                Assert();
             }
             else 
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                System.Console.WriteLine("Fail");
+                Fail();
                 errors.Add(testArray);
             }
         }
+    }
+
+    private void Assert()
+    {
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        System.Console.WriteLine("Ok");
+    }
+    private void Fail()
+    {
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        System.Console.WriteLine("Fail");
+                
     }
     private bool Test(short[] array)
     {

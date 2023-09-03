@@ -5,12 +5,10 @@
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
         "type": "package",
         "build": {
-          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
+          "build/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "Microsoft.OpenApi/1.2.3": {
@@ -35,7 +33,7 @@
           "Swashbuckle.AspNetCore.SwaggerUI": "6.2.3"
         },
         "build": {
-          "build/Swashbuckle.AspNetCore.props": {}
+          "build/_._": {}
         }
       },
       "Swashbuckle.AspNetCore.Swagger/6.2.3": {
@@ -84,6 +82,22 @@
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "related": ".pdb;.xml"
           }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "NextPermutationService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/NextPermutationService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NextPermutationService.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -216,11 +230,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "NextPermutationService/1.0.0": {
+      "type": "project",
+      "path": "../NextPermutationService/NextPermutationService.csproj",
+      "msbuildProject": "../NextPermutationService/NextPermutationService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Swashbuckle.AspNetCore >= 6.2.3"
+      "NextPermutationService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -229,11 +248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Next-Permutation\\NextPermutationService\\NextPermutationService.csproj",
-      "projectName": "NextPermutationService",
-      "projectPath": "C:\\Users\\User\\Desktop\\Next-Permutation\\NextPermutationService\\NextPermutationService.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Next-Permutation\\Tester\\Tester.csproj",
+      "projectName": "Tester",
+      "projectPath": "C:\\Users\\User\\Desktop\\Next-Permutation\\Tester\\Tester.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Next-Permutation\\NextPermutationService\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Next-Permutation\\Tester\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -247,7 +266,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\Next-Permutation\\NextPermutationService\\NextPermutationService.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Next-Permutation\\NextPermutationService\\NextPermutationService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -259,12 +282,6 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
-        "dependencies": {
-          "Swashbuckle.AspNetCore": {
-            "target": "Package",
-            "version": "[6.2.3, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -277,9 +294,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
